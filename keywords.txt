@@ -10,8 +10,10 @@ stop	KEYWORD2
 setPercentage	KEYWORD2
 getPercentage	KEYWORD2
 
+getSeconds	KEYWORD2
+resetSeconds	KEYWORD2
+
 
 # Constants (LITERAL1)
 PERIPUMP_LIB_VERSION	LITERAL1
-
 
