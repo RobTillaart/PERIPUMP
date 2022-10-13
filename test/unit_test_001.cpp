@@ -22,7 +22,8 @@
 
 #include <ArduinoUnitTests.h>
 
-
+#include "Arduino.h"
+#include "Servo.h"
 #include "PERIPUMP.h"
 
 #define pumpPin                 5
