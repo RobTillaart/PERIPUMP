@@ -46,15 +46,20 @@ The examples show the basic working of the functions.
 #### Should
 
 - update readme.md
-- add flow indication cm^3
-  - need runtime counter.
+  - get hardware schema
+  - details ...
 - test
 - unit test possible?
-- example with potmeter
+- example
+- CHANGELOG.md
 
 
 #### Could
 
-- add pump_ml(int ml)  autostop after X ml? possible?
-- **void slowStop()** (blocking, in example?)
-
+- add **void setVolumePerSecond(float flow)** indication cm^3 / sec
+  - at full speed?
+  - need runtime counter.
+- add **void pump_ml(int ml)**  autostop after X ml? possible?
+- add **void slowStop()** 
+  - blocking, 
+  - example?

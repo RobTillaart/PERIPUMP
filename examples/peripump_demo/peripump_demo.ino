@@ -1,14 +1,15 @@
 //
-//    FILE: peristaltic_demo.ino
+//    FILE: peripump_demo.ino
 //  AUTHOR: Rob Tillaart
 // PURPOSE: minimal demo
-//     URL: https://github.com/RobTillaart/peristaltic
+//     URL: https://github.com/RobTillaart/PERIPUMP.git
 //
 
 
-#include "peristaltic.h"
+#include "PERIPUMP.h"
 
 PERIPUMP pump(5);
+
 
 void setup()
 {
@@ -26,9 +27,13 @@ void loop()
 {
   int pos = analogRead(A0) - 512;   //  assumes  UNO 10 bits ADC
   pump.setPercentage(pos / 5.12);
-  delay(250);
+  Serial.print(pos);
+  Serial.print('\t');
+  Serial.print(pump.getPercentage());
+  Serial.println();
+
+  delay(100);
 }
 
 
 //  -- END OF FILE --
-

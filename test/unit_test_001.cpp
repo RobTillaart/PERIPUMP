@@ -22,15 +22,15 @@
 
 #include <ArduinoUnitTests.h>
 
-#include "Arduino.h"
-#include "peristaltic.h"
+
+#include "PERIPUMP.h"
 
 #define pumpPin                 5
 
 
 unittest_setup()
 {
-    fprintf(stderr, "PERISTALTIC_LIB_VERSION: %s\n", (char *) PERISTALTIC_LIB_VERSION);
+    fprintf(stderr, "PERIPUMP_LIB_VERSION: %s\n", (char *) PERIPUMP_LIB_VERSION);
 }
 
 unittest_teardown()
