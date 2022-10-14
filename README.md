@@ -35,15 +35,15 @@ pump was running since start of sketch or reset.
 
 TODO verify.
 
-As the pump draws quite a current (1-2A) a separate power supply is needed.
+As the pump draws quite a current (1-2A) a separate power supply of 5V is needed.
 
 ```
 //  POWER SUPPLY     PROCESSOR     PUMP
 //
 //                    PWM----------PWM
-//    GND-------------GND----------GND
+//        GND---------GND----------GND
 //
-//    VCC--------------------------VCC  5V
+//    5V  VCC----------------------VCC
 //
 ```
 
@@ -81,7 +81,6 @@ The examples show the basic working of the functions.
 #### Should
 
 - update readme.md
-  - get hardware schema
   - details ...
 - test
 - examples
@@ -90,7 +89,7 @@ The examples show the basic working of the functions.
 #### Could
 
 - elaborate timeAccounting
-  - sum += time x speed. (is that better.
+  - sum += time x speed - is that better? 
 - add **void setVolumePerSecond(float flow)** indication cm^3 / sec
   - at full speed?
   - need runtime counter.
