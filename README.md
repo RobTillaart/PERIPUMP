@@ -24,12 +24,9 @@ Furthermore the library adds a minimalistic time registration.
 It measures how long the pump has been running since the start of the sketch or 
 since the last call to **resetRunTime()**. 
 
-- TODO
-- 6V 5W
-- external power supply.
-- flowrate ?
-  - (non) linear
-- low percentages do they work?
+As the DFR0523 uses ~1A when running, an external power supply is mandatory.
+
+
 
 
 ## Hardware schema
@@ -58,10 +55,10 @@ As the pump draws quite a current (1-2A) a separate power supply of 5V is needed
 - **void stop()** set speed percentage to zero, effectively stop the motor.
 Also stops the duration counter.
 - **void setPercentage(float percentage)** sets speed as a percentage from
--100.0 % .. +100.0 % (unknown how linear this is).
-If percentage == 0, the pump stops. 
-Negative values set the pump in reverse.
-Positive values set the pump in forward mode.
+-100.0 % .. +100.0 %.
+  - If percentage == 0, the pump stops. 
+  - Negative values set the pump in reverse.
+  - Positive values set the pump in forward mode.
 - **float getPercentage()** returns set speed as percentage.
 
 
@@ -84,16 +81,18 @@ The examples show the basic working of the functions.
 - update readme.md
 - test
 - examples
-
+- investigate flowrate == (non) linear?
+- investigate low percentages do they work?
 
 #### Could
 
-- elaborate timeAccounting
+- investigate timeAccounting?
   - sum += time x speed - is that better? 
-- add **void setVolumePerSecond(float flow)** indication cm^3 / sec
+- investigate flow support
+  - add **void setVolumePerSecond(float flow)** indication cm^3 / sec
   - at full speed?
-  - need runtime counter.
   - linear / non linear interpolatable (multimap).
+  - difference per pump?
 - add **void pump_ml(int ml)**  autostop after X ml? possible?
 - add **void slowStop()** 
   - blocking, 
