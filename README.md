@@ -16,17 +16,20 @@ Arduino library for peristaltic pump DFR0523 and compatibles.
 VERY EXPERIMENTAL - AVR (UNO) only for now. 
 
 The DFR0523 is a peristaltic pump which can be controlled by a PWM signal. 
-To hide the details of the servo this library gives control by setting the
-speed as a percentage -100.0% .. 100.0%. 
+This PWM (Pulse Width Modulation) is provided by the Arduino Servo library.
+To hide the details of the servo and provide an easy to use interface, this library 
+gives control by setting the speed of the pump as a percentage -100.0% .. 100.0%. 
 The code allows 900 steps for 0..100% so in theory precision is about 1 decimal.
 
-Furthermore the library adds a minimalistic time registration. 
+The library provides also a minimalistic time registration. 
 It measures how long the pump has been running since the start of the sketch or 
 since the last call to **resetRunTime()**. 
+This run time does not take into account the speed of the pump, a feature that might
+be implemented in the future.
 
 As the DFR0523 uses ~1A when running, an external power supply is mandatory.
 
-
+Feedback on the library is welcome.
 
 
 ## Hardware schema
@@ -52,17 +55,17 @@ As the pump draws quite a current (1-2A) a separate power supply of 5V is needed
 
 - **PERIPUMP(uint8_t pumpPin)** constructor. pumpPin should be a PWM supporting pin.
 - **void begin()** initialize the internal variables.
-- **void stop()** set speed percentage to zero, effectively stop the motor.
-Also stops the duration counter.
-- **void setPercentage(float percentage)** sets speed as a percentage from
--100.0 % .. +100.0 %.
+- **void stop()** set speed percentage to zero, effectively stop the pump.
+Also stops the run time measurement counter.
+- **void setPercentage(float percentage)** sets speed as a percentage from full speed.
+The range goes from -100.0 % .. +100.0 %.
   - If percentage == 0, the pump stops. 
   - Negative values set the pump in reverse.
   - Positive values set the pump in forward mode.
-- **float getPercentage()** returns set speed as percentage.
+- **float getPercentage()** returns set speed: -100.0 % .. +100.0 %.
 
 
-### Duration
+### RunTime
 
 - **float getRunTime()** returns total seconds running since last reset / start.
 - **float resetRunTime()** returns total running since last reset / start.
@@ -86,8 +89,9 @@ The examples show the basic working of the functions.
 
 #### Could
 
-- investigate timeAccounting?
-  - sum += time x speed - is that better? 
+- investigate flow-accounting?
+  - sum += time x speed - is that better?
+  - two counters needed, one per direction
 - investigate flow support
   - add **void setVolumePerSecond(float flow)** indication cm^3 / sec
   - at full speed?
