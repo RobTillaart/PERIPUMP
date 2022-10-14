@@ -21,40 +21,83 @@ void setup()
   pump.begin();
   pump.stop();
 
-  pump.setPercentage(0);
-  Serial.print(millis());
-  Serial.print('\t');
-  Serial.print(pump.getPercentage());
-  Serial.println();
-
-  //  take 0.5 seconds to go to 100%
-  slowStart(100.0, 1000);
-  Serial.print(millis());
-  Serial.print('\t');
-  Serial.print(pump.getPercentage());
-  Serial.println();
+  pump.setPercentage(100);
+  delay(2000);
+  pump.stop();
+  delay(1000);
+  pump.setPercentage(-100);
+  delay(2000);
+  pump.stop();
   delay(1000);
 
-  slowStop(500);
-  Serial.print(millis());
-  Serial.print('\t');
-  Serial.print(pump.getPercentage());
-  Serial.println();
-  delay(1000);
+  pump.setPercentage(10);
+  Serial.println(pump.getPercentage());
+  delay(2000);
+  pump.setPercentage(20);
+  Serial.println(pump.getPercentage());
+  delay(2000);
+  pump.setPercentage(30);
+  Serial.println(pump.getPercentage());
+  delay(2000);
+  pump.setPercentage(40);
+  Serial.println(pump.getPercentage());
+  delay(2000);
+  pump.setPercentage(50);
+  Serial.println(pump.getPercentage());
+  delay(2000);
+  pump.setPercentage(60);
+  Serial.println(pump.getPercentage());
+  delay(2000);
+  pump.setPercentage(70);
+  Serial.println(pump.getPercentage());
+  delay(2000);
+  pump.setPercentage(80);
+  Serial.println(pump.getPercentage());
+  delay(2000);
+  pump.setPercentage(90);
+  Serial.println(pump.getPercentage());
+  delay(2000);
+  pump.setPercentage(100);
+  Serial.println(pump.getPercentage());
+  delay(2000);
 
-  slow(0, 100, 250);
-  Serial.print(millis());
-  Serial.print('\t');
-  Serial.print(pump.getPercentage());
-  Serial.println();
-  delay(1000);
 
-  slowStop(10);
-  Serial.print(millis());
-  Serial.print('\t');
-  Serial.print(pump.getPercentage());
-  Serial.println();
-  delay(1000);
+
+
+  //  pump.setPercentage(0);
+  //  Serial.print(millis());
+  //  Serial.print('\t');
+  //  Serial.print(pump.getPercentage());
+  //  Serial.println();
+  //
+  //  //  take 0.5 seconds to go to 100%
+  //  slowStart(100.0, 5000);
+  //  Serial.print(millis());
+  //  Serial.print('\t');
+  //  Serial.print(pump.getPercentage());
+  //  Serial.println();
+  //  delay(1000);
+  //
+  //  slowStop(2000);
+  //  Serial.print(millis());
+  //  Serial.print('\t');
+  //  Serial.print(pump.getPercentage());
+  //  Serial.println();
+  //  delay(1000);
+  //
+  //  slow(0, 100, 5000);
+  //  Serial.print(millis());
+  //  Serial.print('\t');
+  //  Serial.print(pump.getPercentage());
+  //  Serial.println();
+  //  delay(1000);
+  //
+  //  slowStop(10000);
+  //  Serial.print(millis());
+  //  Serial.print('\t');
+  //  Serial.print(pump.getPercentage());
+  //  Serial.println();
+  //  delay(1000);
 
   pump.stop();
   delay(1000);
