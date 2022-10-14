@@ -20,8 +20,9 @@ To hide the details of the servo this library gives control by setting the
 speed as a percentage -100.0% .. 100.0%. 
 The code allows 900 steps for 0..100% so in theory precision is about 1 decimal.
 
-Furthermore the library adds a minimalistic time registration, how long the 
-pump was running since start of sketch or reset. 
+Furthermore the library adds a minimalistic time registration. 
+It measures how long the pump has been running since the start of the sketch or 
+since the last call to **resetRunTime()**. 
 
 - TODO
 - 6V 5W
@@ -52,7 +53,7 @@ As the pump draws quite a current (1-2A) a separate power supply of 5V is needed
 
 ### Base
 
-- **PERIPUMP(uint8_t pumpPin);** constructor. 
+- **PERIPUMP(uint8_t pumpPin)** constructor. pumpPin should be a PWM supporting pin.
 - **void begin()** initialize the internal variables.
 - **void stop()** set speed percentage to zero, effectively stop the motor.
 Also stops the duration counter.
@@ -68,7 +69,7 @@ Positive values set the pump in forward mode.
 
 - **float getRunTime()** returns total seconds running since last reset / start.
 - **float resetRunTime()** returns total running since last reset / start.
-Resets the internal counter to zero again.
+Resets the internal time counter to zero again.
 
 
 ## Operation
@@ -81,7 +82,6 @@ The examples show the basic working of the functions.
 #### Should
 
 - update readme.md
-  - details ...
 - test
 - examples
 
@@ -104,6 +104,6 @@ The examples show the basic working of the functions.
 #### Won't
 
 - unit test possible?
-  - No servo include fails.
+  - No servo.h include fails.
   - compilation of examples works for UNO and RP2040 pico.
   
