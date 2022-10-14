@@ -10,8 +10,8 @@ stop	KEYWORD2
 setPercentage	KEYWORD2
 getPercentage	KEYWORD2
 
-getSeconds	KEYWORD2
-resetSeconds	KEYWORD2
+getRunTime	KEYWORD2
+resetRunTime	KEYWORD2
 
 
 # Constants (LITERAL1)

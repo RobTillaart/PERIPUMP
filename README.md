@@ -99,6 +99,7 @@ The examples show the basic working of the functions.
 - add **void slowStop()** 
   - blocking, 
   - example?
+- default percentage == 0 ?
 
 
 #### Won't
