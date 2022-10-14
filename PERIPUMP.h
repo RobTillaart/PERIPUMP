@@ -35,8 +35,8 @@ public:
   //
   //  DURATION
   //
-  float    getSeconds();    //  total running since last reset / start.
-  float    resetSeconds();
+  float    getRunTime();    //  total seconds running since last reset / start.
+  float    resetRunTime();
 
 
 private:
