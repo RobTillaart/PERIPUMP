@@ -18,7 +18,7 @@ VERY EXPERIMENTAL - AVR (UNO) only for now.
 The DFR0523 is a peristaltic pump which can be controlled by a PWM signal. 
 To hide the details of the servo this library gives control by setting the
 speed as a percentage -100.0% .. 100.0%. 
-The code allows 900 steps for 0..100% so in theory precission is about 1 decimal.
+The code allows 900 steps for 0..100% so in theory precision is about 1 decimal.
 
 Furthermore the library adds a minimalistic time registration, how long the 
 pump was running since start of sketch or reset. 
