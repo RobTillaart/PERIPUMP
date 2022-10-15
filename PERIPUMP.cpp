@@ -49,16 +49,17 @@ void PERIPUMP::setPercentage(float percentage)
 {
   //  weighted runtime ?
   //  _sumTime += (millis() - _start) * abs(_percentage);
+
   _percentage = constrain(percentage, -100.0, 100.0);
 
   uint32_t now = millis();
-  _sumTime += (now - _start);
 
   uint16_t ms = 0;
   if (_percentage == 0)
   {
+    if (_start != 0) _sumTime += (now - _start);
     //  middle position is stop
-    ms = 1500;
+    ms = 0;
     _start = 0;
   }
   else if (_percentage > 0)
