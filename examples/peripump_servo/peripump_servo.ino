@@ -15,8 +15,8 @@ void setup()
   Serial.begin(115200);
   Serial.println();
   Serial.println(__FILE__);
-  Serial.print("PERIPUMP_LIB_VERSION: ");
-  Serial.println(PERIPUMP_LIB_VERSION);
+  //  Serial.print("PERIPUMP_LIB_VERSION: ");
+  //  Serial.println(PERIPUMP_LIB_VERSION);
   Serial.println();
 
   s.attach(5);   //  Connect to PIN 5
